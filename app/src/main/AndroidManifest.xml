@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Filter"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPass2"
             android:exported="false" />
         <activity
