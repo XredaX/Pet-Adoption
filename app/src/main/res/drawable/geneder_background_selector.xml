@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F9F8FD"/>
+    <item android:state_checked="true" android:drawable="@drawable/geneder_checked_background"/>
+    <item android:drawable="@drawable/geneder_unchecked_background"/>
+</selector>

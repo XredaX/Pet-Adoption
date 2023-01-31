@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment_add">
 
     <LinearLayout
@@ -31,27 +32,64 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:background="@drawable/round_dark_back_bleu5"
             android:layout_marginStart="5dp"
             android:layout_marginTop="-5dp"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/round_dark_back_bleu5">
+            android:layout_gravity="center"
+            android:layout_marginEnd="5dp">
 
-            <TextView
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgPicker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_dark_back_bleu5"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="@dimen/_8sdp" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/editImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_edit"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/lin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Add photo"
-                android:textColor="@color/orange_two"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/cmrImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    app:srcCompat="@drawable/ic_camera" />
+
+                <TextView
+                    android:id="@+id/imgTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add photo"
+                    android:textColor="@color/bleu"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
         <EditText
+            android:id="@+id/nameTxt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_dark_back_bleu5"
             android:hint="Pet Name"
@@ -59,46 +97,175 @@
             android:maxLines="1"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
-            android:hint="Type"
+            android:hint="Select Pet Type"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-            android:background="@drawable/round_dark_back_bleu5"
-            >
+            android:background="@drawable/round_dark_back_bleu5">
 
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/auto"
+                android:id="@+id/spinnerCategory"
                 android:inputType="none">
 
             </AutoCompleteTextView>
 
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Select Pet Breed"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:background="@drawable/round_dark_back_bleu5">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerRace"
+                android:inputType="none">
+
+            </AutoCompleteTextView>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-<!--        <EditText
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/round_dark_back_bleu5">
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="10dp"
+                android:text="Select Date"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/CalendarBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                app:srcCompat="@drawable/ic_calendar" />
+
+        </RelativeLayout>
+
+        <RadioGroup
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/radioBtnGrp"
+            android:layout_gravity="center"
+            android:checkedButton="@id/maleRadioBtn">
+
+            <RadioButton
+                android:id="@+id/maleRadioBtn"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:background="@drawable/male_female_selector"
+                android:button="@android:color/transparent"
+                android:drawableStart="@drawable/ic_male"
+                android:textColor="@color/male_female_text_and_icon_selector"
+                android:padding="16dp"
+                android:drawableTint="@color/male_female_text_and_icon_selector"
+                android:drawablePadding="12dp"/>
+
+            <RadioButton
+                android:id="@+id/femaleRadioBtn"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:layout_marginStart="16dp"
+                android:button="@android:color/transparent"
+                android:drawableStart="@drawable/ic_female"
+                android:background="@drawable/male_female_selector"
+                android:textColor="@color/male_female_text_and_icon_selector"
+                android:drawableTint="@color/male_female_text_and_icon_selector"
+                android:padding="16dp"
+                android:drawablePadding="12dp"/>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/cityTxt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/round_dark_back_bleu5"
-            android:hint="Username"
+            android:hint="City"
             android:inputType="text"
             android:maxLines="1"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:textSize="16sp" />-->
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/weightTxt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/round_dark_back_bleu5"
+            android:hint="Weight"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/descriptionTxt"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/round_dark_back_bleu5"
+            android:hint="Description..."
+            android:inputType="textMultiLine"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/uploadNewPet"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_back_primary"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
-</FrameLayout>
+</ScrollView>

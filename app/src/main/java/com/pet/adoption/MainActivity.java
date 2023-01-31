@@ -34,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+/*        SharedPreferences sp1 = getSharedPreferences("filter", MODE_PRIVATE);
+        SharedPreferences.Editor Ed1 = sp1.edit();
+        Ed1.putString("PET_TYPE", "All");
+        Ed1.putString("PET_BREED", "All");
+        Ed1.putString("PET_LOC", "");
+        Ed1.putString("PET_GENDER", "");
+        Ed1.commit();*/
+
 
         introPref = new IntroPref(this);
         if (!introPref.isFirstTimeLaunch()) {

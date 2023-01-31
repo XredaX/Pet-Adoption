@@ -19,11 +19,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hbb20.CountryCodePicker;
 
 public class Register extends AppCompatActivity {
 
     private boolean passwordShowing = false;
     private boolean conPasswordShowing = false;
+    private CountryCodePicker countryCodePicker;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://pet-adoption-c09f7-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,9 @@ public class Register extends AppCompatActivity {
         final ImageView conPasswordIcon = findViewById(R.id.conPasswordIcon);
         final TextView signUpBtn = findViewById(R.id.signUpBtn);
         final TextView signInBtn = findViewById(R.id.signIpBtn);
+
+        countryCodePicker = findViewById(R.id.ccp);
+        countryCodePicker.registerCarrierNumberEditText(mobile);
 
         passwordIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +107,9 @@ public class Register extends AppCompatActivity {
                             if (snapshot.hasChild(usernameTxt)){
                                 Toast.makeText(Register.this, "Already exist", Toast.LENGTH_SHORT).show();
                             }
+                            else if (mobileTxt.replace(" ", "").length()<10){
+                                Toast.makeText(Register.this, "Please enter a correct phone number", Toast.LENGTH_SHORT).show();
+                            }
                             else {
                                 saveLastButtonPressed(2);
                                 Intent intent = new Intent(Register.this, OTPVerificationCreAcc.class);
@@ -111,6 +119,7 @@ public class Register extends AppCompatActivity {
                                 intent.putExtra("mobileTxt", mobileTxt);
                                 intent.putExtra("passwordTxt", passwordTxt);
                                 startActivity(intent);
+                                finish();
                             }
                         }
 

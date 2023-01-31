@@ -44,7 +44,56 @@
         <entry key="..\:/Users/redae/Desktop/IntroSlider-master/app/src/main/res/layout/mm.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/redae/Desktop/IntroSlider-master/app/src/main/res/layout/tab.xml" value="0.209375" />
         <entry key="..\:/Users/redae/Desktop/IntroSlider-master/app/src/main/res/menu/bottom_menu.xml" value="0.2" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/back_dialog.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/cat_back.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/circle.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/dialog_bg.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/dog_back.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/editcircle.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/edittext_shadow.xml" value="0.17962962962962964" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/geneder_background_selector.xml" value="0.15092592592592594" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/geneder_checked_background.xml" value="0.15092592592592594" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/geneder_unchecked_background.xml" value="0.15092592592592594" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/ic_add.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/ic_favo.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/ic_favo1.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/ic_location.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/male_female_checked.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/male_female_selector.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/male_female_unchecked.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/parrot_back.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/rectangle_25_ek3_shape.xml" value="0.14537037037037037" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/round_back_primary.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/round_back_primary5.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/round_dark_back_bleu5.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/round_dark_back_bleu55.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/round_dark_back_bleu5_15.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/tab_background.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/transparent_background.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/drawable/white_bg.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/activity_filter.xml" value="0.22" />
         <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/activity_home.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/activity_login.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/activity_otpverification.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/allanimal.xml" value="0.25" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/edit_profile.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/empty_fav.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/filter.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_add.xml" value="0.22" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_category.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_fav.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_pet.xml" value="0.18" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_profil.xml" value="0.21" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/fragment_test00.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/itemanimal.xml" value="0.2850609756097561" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/layout_shadow_border.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/petselected.xml" value="0.25" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/layout/test.xml" value="0.209375" />
+        <entry key="..\:/Users/redae/Desktop/Pet Adoption/app/src/main/res/menu/bottom_nav_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>

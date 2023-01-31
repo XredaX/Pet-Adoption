@@ -58,11 +58,11 @@
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/filterBtn"
+                android:id="@+id/filterBtn1"
                 android:layout_width="45dp"
                 android:layout_height="55dp"
-                android:layout_marginBottom="10dp"
                 android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
                 android:paddingRight="25dp"
                 app:srcCompat="@drawable/ic_filter" />
         </RelativeLayout>
@@ -136,7 +136,7 @@
                 android:layout_marginTop="6dp"
                 android:text="View all"
                 android:textColor="@color/primary2"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
 
         </RelativeLayout>
@@ -154,20 +154,21 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/catCategory"
                     android:layout_width="@dimen/_90sdp"
                     android:layout_height="43dp"
-                    android:text="Cat"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/cat_back"
+                    android:drawableStart="@drawable/cat1"
                     android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
                     android:scaleX="1"
                     android:scaleY="1"
-                    android:textStyle="bold"
+                    android:text="Cat"
                     android:textSize="15dp"
-                    android:drawableStart="@drawable/cat1"
-                    android:paddingStart="10dp"
-                    android:background="@drawable/cat_back"
-                    android:paddingEnd="10dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="@dimen/_90sdp"
@@ -222,7 +223,6 @@
 
         </HorizontalScrollView>
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -248,260 +248,10 @@
 
         </RelativeLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="@dimen/_10sdp"
-            android:id="@+id/cardRecommended1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardElevation="@dimen/_3sdp" >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_8sdp">
-
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/imageRecommendedAnimal1"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/cat_pic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:riv_corner_radius="@dimen/_8sdp"/>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/_8sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageRecommendedAnimal1"
-                    app:layout_constraintTop_toTopOf="parent" >
-
-
-                    <TextView
-                        android:id="@+id/namePet1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Lilia"
-                        android:textColor="@color/primary1"
-                        android:textSize="@dimen/_17ssp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Female, 5 Months"
-                        android:textColor="@color/dark_one"
-                        android:textSize="@dimen/_11ssp"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Casablanca"
-                        android:textColor="@color/dark_one"
-                        android:textSize="@dimen/_11ssp"
-                        />
-
-                </LinearLayout>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:background="@drawable/cat_back"
-                    android:padding="@dimen/_5sdp"
-                    app:srcCompat="@drawable/ic_favo"
-                    android:tint="@color/white"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardRecommended2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardElevation="@dimen/_3sdp" >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_8sdp">
-
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/imageRecommendedAnimal2"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/dog_pic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:riv_corner_radius="@dimen/_8sdp"/>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/_8sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageRecommendedAnimal2"
-                    app:layout_constraintTop_toTopOf="parent" >
-
-
-                    <TextView
-                        android:id="@+id/namePet2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Pomsky"
-                        android:textColor="@color/primary1"
-                        android:textSize="@dimen/_17ssp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Male, 2 Months"
-                        android:textColor="@color/dark_one"
-                        android:textSize="@dimen/_11ssp"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Rabat"
-                        android:textColor="@color/dark_one"
-                        android:textSize="@dimen/_11ssp"
-                        />
-
-                </LinearLayout>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:background="@drawable/cat_back"
-                    android:padding="@dimen/_5sdp"
-                    app:srcCompat="@drawable/ic_favo"
-                    android:tint="@color/white"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardRecommended3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="@dimen/_8sdp"
-            app:cardElevation="@dimen/_3sdp" >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_8sdp">
-
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/imageRecommendedAnimal3"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/parrot_pic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:riv_corner_radius="@dimen/_8sdp"/>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/_8sdp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageRecommendedAnimal3"
-                    app:layout_constraintTop_toTopOf="parent" >
-
-                    <TextView
-                        android:id="@+id/namePet3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Jambo"
-                        android:textColor="@color/primary1"
-                        android:textSize="@dimen/_17ssp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Female, 8 Months"
-                        android:textColor="@color/dark_one"
-                        android:textSize="@dimen/_11ssp"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Tétouan"
-                        android:textColor="@color/dark_one"
-                        android:textSize="@dimen/_11ssp"
-                        />
-
-                </LinearLayout>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:background="@drawable/cat_back"
-                    android:padding="@dimen/_5sdp"
-                    app:srcCompat="@drawable/ic_favo"
-                    android:tint="@color/white"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

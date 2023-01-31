@@ -3,6 +3,8 @@
     package="com.pet.adoption">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -11,9 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Filter"
-            android:exported="false" />
         <activity
             android:name=".ForgotPass2"
             android:exported="false" />
@@ -32,7 +31,8 @@
         <activity
             android:name=".ActivityHome"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

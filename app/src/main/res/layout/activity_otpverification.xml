@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="4"
+        android:weightSum="6"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
@@ -45,10 +45,9 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginEnd="10dp"
             android:layout_weight="1"/>
 
         <EditText
@@ -59,11 +58,10 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textSize="30sp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             android:textStyle="bold"
-            android:layout_marginEnd="10dp"
             android:layout_weight="1"/>
         <EditText
             android:id="@+id/otpET3"
@@ -73,11 +71,10 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textSize="30sp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             android:textStyle="bold"
-            android:layout_marginEnd="10dp"
             android:layout_weight="1"/>
         <EditText
             android:id="@+id/otpET4"
@@ -87,11 +84,42 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLines="1"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/otpET5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_dark_back_bleu5_15"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@color/bleu"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/otpET6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_dark_back_bleu5_15"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@color/bleu"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+
+            android:layout_weight="1"/>
+
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -124,7 +152,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Resend"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textStyle="bold"/>
 
     </LinearLayout>

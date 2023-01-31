@@ -41,7 +41,7 @@
         android:paddingEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="30dp"/>
 
     <EditText
         android:id="@+id/fullNameEt"
@@ -73,20 +73,38 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/mobileEt"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/round_dark_back_bleu5"
-        android:hint="Phone number"
-        android:maxLines="1"
-        android:inputType="phone"
-        android:textSize="16sp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            app:ccp_showNameCode="false"
+            android:layout_marginTop="20dp"
+            app:ccp_contentColor="@color/black"
+            android:background="@drawable/round_dark_back_bleu5"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:id="@+id/mobileEt"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/round_dark_back_bleu5"
+            android:hint="Phone number"
+            android:maxLines="1"
+            android:inputType="phone"
+            android:textSize="16sp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -185,7 +203,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textStyle="bold"/>
 
     </LinearLayout>
