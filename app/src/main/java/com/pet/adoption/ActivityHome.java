@@ -1,7 +1,5 @@
 package com.pet.adoption;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -49,6 +47,7 @@ public class ActivityHome extends AppCompatActivity {
         BottomNavigation.setCount(1, "10");
         BottomNavigation.show(1, false);
 
+
         BottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
@@ -64,7 +63,10 @@ public class ActivityHome extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext()," You reselected "+ item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
+
+//        loadFragment(new fragment_home());
     }
+
 
     private void loadFragment(Fragment fragment) {
         //replace the fragment

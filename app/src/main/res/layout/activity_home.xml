@@ -17,12 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/navigationBar"
-        app:mbn_backgroundBottomColor="@color/orange_two"
+        app:mbn_backgroundBottomColor="@color/bleu"
         app:mbn_circleColor="@android:color/white"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_countTextColor="@android:color/white"
         app:mbn_defaultIconColor="@android:color/white"
-        app:mbn_selectedIconColor="@color/orange_two" />
-
+        app:mbn_selectedIconColor="@color/bleu" />
 
 </LinearLayout>

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimary">#f3f4fd</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#fff</color>
     <color name="lightWhite">#f2f5f8</color>
 
     <color name="background">#f8fcfd</color>
+
+    <color name="gray">#747474</color>
 
     <color name="black">#050505</color>
     <color name="colorPrimary1">#6200EE</color>
@@ -23,14 +25,14 @@
 
 
     // dots active colors
-    <color name="orange_one">#4297D7</color>
-    <color name="orange_two">#4297D7</color>
+    <color name="bleu_one">#4297D7</color>
+    <color name="bleu">#4297D7</color>
     <color name="orange_three">#4297D7</color>
 
 
     <array name="active">
-        <item>@color/orange_one</item>
-        <item>@color/orange_two</item>
+        <item>@color/bleu_one</item>
+        <item>@color/bleu</item>
         <item>@color/orange_three</item>
     </array>
 

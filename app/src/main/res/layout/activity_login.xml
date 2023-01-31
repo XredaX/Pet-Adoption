@@ -91,7 +91,7 @@
         android:text="Forgot Password?"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:textColor="@color/orange_two"/>
+        android:textColor="@color/bleu"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signInBtn"
@@ -215,7 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:textColor="@color/orange_two"
+            android:textColor="@color/bleu"
             android:textStyle="bold"/>
 
     </LinearLayout>
