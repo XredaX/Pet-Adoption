@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
-                android:drawableStart="@drawable/ic_pet1"
+                android:drawableStart="@drawable/ic_pet"
                 android:text="  Adopt a Friend"
                 android:textColor="@color/black"
                 android:textSize="20dp"

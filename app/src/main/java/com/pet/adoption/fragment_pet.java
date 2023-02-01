@@ -79,52 +79,6 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
             }
         });
 
-        /*databaseReference.child("pets").addValueEventListener(new ValueEventListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                try {
-                    if (snapshot.exists()) {
-                        for(DataSnapshot item: snapshot.getChildren()){
-                            String uniqueID = item.child("ID").getValue(String.class);
-                            String[] date1 = item.child("BirthDay").getValue(String.class).split("-", 3);
-                            String url = item.child("Image").getValue(String.class);
-                            String race = item.child("PetBreed").getValue(String.class);
-                            String weight = item.child("Weight").getValue(String.class);
-                            String description = item.child("Description").getValue(String.class);
-                            String loc = item.child("City").getValue(String.class);
-                            String owner = item.child("Owner").getValue(String.class);
-                            int year = Integer.parseInt(date1[0]), month=Integer.parseInt(date1[1]), dayOfMonth=Integer.parseInt(date1[2]);
-                            String age;
-                            int age1 = Period.between(
-                                    LocalDate.of(year, month, dayOfMonth),
-                                    LocalDate.now()
-                            ).getYears();
-                            if (age1 == 0){
-                                age1 = Period.between(
-                                        LocalDate.of(year, month, dayOfMonth),
-                                        LocalDate.now()
-                                ).getMonths();
-                                age = String.valueOf(age1) + " Months";
-                            }
-                            else age = String.valueOf(age1) + " Years";
-                            String desc = item.child("Gender").getValue(String.class) + ", " + age;
-                            li.add(new animal_profil(url , item.child("PetName").getValue(String.class),
-                                    desc,loc, race, weight, description, owner, uniqueID));
-                        }
-                        adapter.notifyDataSetChanged();
-                    }
-                    else linearLayout.setVisibility(View.VISIBLE);
-                }
-                catch (Exception e){}
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
-
         searchPets();
 
         adapter = new rec_adapter1(li, this);
@@ -206,7 +160,13 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
     private void filterList(String s) {
         ArrayList<animal_profil> filterList = new ArrayList<>();
 
-        for (animal_profil item : li) if (item.getNom().toLowerCase().contains(s.toLowerCase())) filterList.add(item);
+        for (animal_profil item : li) {
+            String[] string = item.getDesc().toLowerCase().split("", 2);
+            String genre = string[0];
+            if (item.getNom().toLowerCase().contains(s.toLowerCase()) ||
+                    item.getLoc().toLowerCase().contains(s.toLowerCase())
+                || genre.contains(s.toLowerCase())) filterList.add(item);
+        }
         if (filterList.isEmpty()) Toast.makeText(getContext(), "No data found!", Toast.LENGTH_SHORT).show();
         else adapter.setFilterList(filterList);
     }
@@ -351,15 +311,11 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
         radioGrp1.clearCheck();
     }
 
-    void searchPets(){
-/*
+    void searchPets() {
         SharedPreferences sp1=getContext().getSharedPreferences("filter", Context.MODE_PRIVATE);
         String PET_TYPE =sp1.getString("PET_TYPE", null);
         String PET_BREED =sp1.getString("PET_BREED", null);
-        String PET_LOC =sp1.getString("PET_LOC", null);
         String PET_GENDER =sp1.getString("PET_GENDER", null);
-*/
-
 
         databaseReference.child("pets").addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -367,7 +323,7 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 try {
                     if (snapshot.exists()) {
-                        for(DataSnapshot item: snapshot.getChildren()){
+                        for (DataSnapshot item : snapshot.getChildren()) {
                             String uniqueID = item.child("ID").getValue(String.class);
                             String[] date1 = item.child("BirthDay").getValue(String.class).split("-", 3);
                             String url = item.child("Image").getValue(String.class);
@@ -376,34 +332,32 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
                             String description = item.child("Description").getValue(String.class);
                             String loc = item.child("City").getValue(String.class);
                             String owner = item.child("Owner").getValue(String.class);
-                            int year = Integer.parseInt(date1[0]), month=Integer.parseInt(date1[1]), dayOfMonth=Integer.parseInt(date1[2]);
+                            int year = Integer.parseInt(date1[0]), month = Integer.parseInt(date1[1]), dayOfMonth = Integer.parseInt(date1[2]);
                             String age;
                             int age1 = Period.between(
                                     LocalDate.of(year, month, dayOfMonth),
                                     LocalDate.now()
                             ).getYears();
-                            if (age1 == 0){
+                            if (age1 == 0) {
                                 age1 = Period.between(
                                         LocalDate.of(year, month, dayOfMonth),
                                         LocalDate.now()
                                 ).getMonths();
                                 age = String.valueOf(age1) + " Months";
-                            }
-                            else age = String.valueOf(age1) + " Years";
+                            } else age = String.valueOf(age1) + " Years";
                             String desc = item.child("Gender").getValue(String.class) + ", " + age;
 
 //                            if (PET_TYPE.equals("All") && PET_BREED.equals("All") && PET_LOC.equals("") && PET_GENDER.equals(""))
-                            li.add(new animal_profil(url , item.child("PetName").getValue(String.class),
-                                desc,loc, race, weight, description, owner, uniqueID));
+                            li.add(new animal_profil(url, item.child("PetName").getValue(String.class),
+                                    desc, loc, race, weight, description, owner, uniqueID));
                             /*else if (PET_TYPE.equals("All") && PET_BREED.equals("All")*/
 
 
                         }
                         adapter.notifyDataSetChanged();
-                    }
-                    else linearLayout.setVisibility(View.VISIBLE);
+                    } else linearLayout.setVisibility(View.VISIBLE);
+                } catch (Exception e) {
                 }
-                catch (Exception e){}
             }
 
             @Override
@@ -411,29 +365,5 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
 
             }
         });
-
-
-
-/*        Iterator<animal_profil> iterator = li.iterator();
-        while(iterator.hasNext()) {
-            animal_profil currentX = iterator.next();
-            Toast.makeText(getContext(), currentX.desc, Toast.LENGTH_SHORT).show();
-        }*/
-
-/*        if (PET_TYPE.equals("All")) {
-
-
-
-            if (PET_BREED.equals("All")) { }
-            else { }
-
-        }
-        else { }
-
-        if (PET_TYPE.isEmpty()) textInputLayout1.setHint(PET_TYPE);
-        if (!PET_BREED.isEmpty()) textInputLayout2.setHint(PET_BREED);
-        if (!PET_LOC.isEmpty()) city.setText(PET_LOC);
-        if (!PET_GENDER.isEmpty()) city.setText(PET_LOC);*/
     }
-
 }
