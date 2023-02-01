@@ -36,6 +36,8 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.UUID;
 
+import es.dmoral.toasty.Toasty;
+
 public class fragment_add extends Fragment {
 
     private RoundedImageView image, editImg;
@@ -169,7 +171,7 @@ public class fragment_add extends Fragment {
                             databaseReference.child("pets").child(uniqueID).child("BirthDay").setValue(dateTxt1);
                             databaseReference.child("pets").child(uniqueID).child("Owner").setValue(Owner);
                             databaseReference.child("pets").child(uniqueID).child("City").setValue(cityTxt1);
-                            Toast.makeText(getContext(), "Done", Toast.LENGTH_SHORT).show();
+                            Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                             cleanAll();
                         }
                     });

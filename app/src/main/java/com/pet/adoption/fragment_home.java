@@ -40,6 +40,8 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import es.dmoral.toasty.Toasty;
+
 public class fragment_home extends Fragment implements recycleViewInterface{
     rec_adapter adapter  ;
     ArrayList<animal_profil> li = new ArrayList<>();
@@ -147,6 +149,8 @@ public class fragment_home extends Fragment implements recycleViewInterface{
                         Ed.putString("PET_BREED", spinner2);
                         Ed.putString("PET_GENDER", String.valueOf(radioId1));
                         Ed.commit();
+                        Toasty.normal(getContext(), "Modifications saved", Toast.LENGTH_SHORT, ContextCompat.getDrawable(getContext(), R.drawable.ic_pet)).show();
+
                     }
                 });
 
@@ -232,6 +236,7 @@ public class fragment_home extends Fragment implements recycleViewInterface{
                                     if (dt1.equals(username) && dt2.equals(id)){
                                         item.getRef().removeValue();
                                         favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.gray));
+                                        Toasty.info(getContext(), "Removed successfully", Toast.LENGTH_SHORT, true).show();
                                         a = 1;
                                     }
                                 }
@@ -239,6 +244,7 @@ public class fragment_home extends Fragment implements recycleViewInterface{
                                     databaseReference.child("favs").child(id1).child("ID").setValue(id);
                                     databaseReference.child("favs").child(id1).child("Owner").setValue(username);
                                     favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.bleu));
+                                    Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                                 }
                             }
 
@@ -246,6 +252,7 @@ public class fragment_home extends Fragment implements recycleViewInterface{
                                 databaseReference.child("favs").child(id1).child("ID").setValue(id);
                                 databaseReference.child("favs").child(id1).child("Owner").setValue(username);
                                 favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.bleu));
+                                Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                             }
                         }
                         catch (Exception e){}
@@ -320,5 +327,6 @@ public class fragment_home extends Fragment implements recycleViewInterface{
         textInputLayout1.setHint("All");
         textInputLayout2.setHint("All");
         radioGrp1.clearCheck();
+        Toasty.normal(getContext(), "Reset done", Toast.LENGTH_SHORT, ContextCompat.getDrawable(getContext(), R.drawable.ic_reset)).show();
     }
 }
