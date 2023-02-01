@@ -1,5 +1,6 @@
 package com.pet.adoption;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +47,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+
+import es.dmoral.toasty.Toasty;
 
 
 public class fragment_pet extends Fragment implements recycleViewInterface{
@@ -118,7 +122,6 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
 
                         int radioId1 = radioGrp1.getCheckedRadioButtonId();
                         RadioButton radioButton1 = view1.findViewById(radioId1);
-//                        String radioButtonchecked = radioButton1.getText().toString();
                         String spinner1 = autoCompleteTextView1.getText().toString();
                         String spinner2 = autoCompleteTextView2.getText().toString();
 
@@ -128,6 +131,8 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
                         Ed.putString("PET_BREED", spinner2);
                         Ed.putString("PET_GENDER", String.valueOf(radioId1));
                         Ed.commit();
+                        Toasty.normal(getContext(), "Modifications saved", Toast.LENGTH_SHORT, ContextCompat.getDrawable(getContext(), R.drawable.ic_pet)).show();
+
                     }
                 });
 
@@ -228,6 +233,7 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
                                     if (dt1.equals(username) && dt2.equals(id)){
                                         item.getRef().removeValue();
                                         favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.gray));
+                                        Toasty.info(getContext(), "Removed successfully", Toast.LENGTH_SHORT, true).show();
                                         a = 1;
                                     }
                                 }
@@ -235,6 +241,7 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
                                     databaseReference.child("favs").child(id1).child("ID").setValue(id);
                                     databaseReference.child("favs").child(id1).child("Owner").setValue(username);
                                     favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.bleu));
+                                    Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                                 }
                             }
 
@@ -242,6 +249,7 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
                                 databaseReference.child("favs").child(id1).child("ID").setValue(id);
                                 databaseReference.child("favs").child(id1).child("Owner").setValue(username);
                                 favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.bleu));
+                                Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                             }
                         }
                         catch (Exception e){}
@@ -309,6 +317,8 @@ public class fragment_pet extends Fragment implements recycleViewInterface{
         textInputLayout1.setHint("All");
         textInputLayout2.setHint("All");
         radioGrp1.clearCheck();
+        Toasty.normal(getContext(), "Reset done", Toast.LENGTH_SHORT, ContextCompat.getDrawable(getContext(), R.drawable.ic_reset)).show();
+
     }
 
     void searchPets() {

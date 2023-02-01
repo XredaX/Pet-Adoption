@@ -35,6 +35,8 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import es.dmoral.toasty.Toasty;
+
 public class fragment_fav extends Fragment implements recycleViewInterface{
     rec_adapter1 adapter  ;
     ArrayList<animal_profil> li = new ArrayList<>();
@@ -187,6 +189,7 @@ public class fragment_fav extends Fragment implements recycleViewInterface{
                                     if (dt1.equals(username) && dt2.equals(id)){
                                         item.getRef().removeValue();
                                         favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.gray));
+                                        Toasty.info(getContext(), "Removed successfully", Toast.LENGTH_SHORT, true).show();
                                         a = 1;
                                     }
                                 }
@@ -194,6 +197,7 @@ public class fragment_fav extends Fragment implements recycleViewInterface{
                                     databaseReference.child("favs").child(id1).child("ID").setValue(id);
                                     databaseReference.child("favs").child(id1).child("Owner").setValue(username);
                                     favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.bleu));
+                                    Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                                 }
                             }
 
@@ -201,6 +205,7 @@ public class fragment_fav extends Fragment implements recycleViewInterface{
                                 databaseReference.child("favs").child(id1).child("ID").setValue(id);
                                 databaseReference.child("favs").child(id1).child("Owner").setValue(username);
                                 favBtn.setColorFilter(ContextCompat.getColor(getContext(), R.color.bleu));
+                                Toasty.success(getContext(), "Added successfully", Toast.LENGTH_SHORT, true).show();
                             }
                         }
                         catch (Exception e){}
