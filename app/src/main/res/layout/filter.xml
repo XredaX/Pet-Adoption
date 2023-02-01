@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/back_dialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_back"
+                android:textSize="20dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/namePetDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Filter"
+                android:textSize="20dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/resetBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_reset"
+                android:textSize="20dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_dark_back_bleu5"
+            android:elevation="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Filter pets with more specific types"
+                    android:textColor="@color/primary2"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="Select Pet Type"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/textInputLayoutFilter1"
+                    android:background="@drawable/round_dark_back_bleu5"
+                    android:hint="All">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none">
+
+                    </AutoCompleteTextView>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Select Pet Breed"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutFilter2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/round_dark_back_bleu5"
+                    android:hint="All">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_dark_back_bleu5"
+                        android:inputType="none">
+
+                    </AutoCompleteTextView>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Gender"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/radioBtnGrpFilter"
+                    android:layout_gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/maleRadioBtn"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:background="@drawable/male_female_selector"
+                        android:button="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_male"
+                        android:textColor="@color/male_female_text_and_icon_selector"
+                        android:padding="16dp"
+                        android:drawableTint="@color/male_female_text_and_icon_selector"
+                        android:drawablePadding="12dp"/>
+
+                    <RadioButton
+                        android:id="@+id/femaleRadioBtn"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:layout_marginStart="16dp"
+                        android:button="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_female"
+                        android:background="@drawable/male_female_selector"
+                        android:textColor="@color/male_female_text_and_icon_selector"
+                        android:drawableTint="@color/male_female_text_and_icon_selector"
+                        android:padding="16dp"
+                        android:drawablePadding="12dp"/>
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/applyBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/round_back_primary"
+                    android:text="Apply"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
