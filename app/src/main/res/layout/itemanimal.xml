@@ -30,7 +30,6 @@
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_80sdp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cat_pic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -65,8 +64,7 @@
                     android:gravity="center"
                     android:text="Female, 5 Months"
                     android:textColor="@color/dark_one"
-                    android:textSize="@dimen/_11ssp"
-                    />
+                    android:textSize="@dimen/_11ssp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
