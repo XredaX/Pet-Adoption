@@ -49,6 +49,4 @@ dependencies {
     implementation 'com.github.dhaval2404:imagepicker:2.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.github.GrenderG:Toasty:1.5.2'
-    implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
-
 }

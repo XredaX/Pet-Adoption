@@ -21,9 +21,9 @@
                 android:id="@+id/backBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:drawableStart="@drawable/ic_back"
-                android:textSize="20dp"
-                android:layout_weight="1"/>
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/namePetDialog"
