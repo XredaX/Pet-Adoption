@@ -43,12 +43,14 @@ import java.util.UUID;
 import es.dmoral.toasty.Toasty;
 
 public class fragment_home extends Fragment implements recycleViewInterface{
-    rec_adapter adapter  ;
+    rec_adapter adapter;
+    noti_adapter adapter1;
     ArrayList<animal_profil> li = new ArrayList<>();
-    RecyclerView rec;
+    ArrayList<notifications> li1 = new ArrayList<>();
+    RecyclerView rec, recNotifications;
     private BottomSheetDialog bottomSheetDialog;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://pet-adoption-c09f7-default-rtdb.firebaseio.com/");
-
+    GridLayoutManager gg;
     private TextInputLayout textInputLayout1, textInputLayout2;
     private AutoCompleteTextView autoCompleteTextView1, autoCompleteTextView2;
 
@@ -56,6 +58,10 @@ public class fragment_home extends Fragment implements recycleViewInterface{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetTheme);
+
+
+
 
         databaseReference.child("pets").addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -102,13 +108,13 @@ public class fragment_home extends Fragment implements recycleViewInterface{
             }
         });
 
+
         adapter = new rec_adapter(li, this);
         rec = view.findViewById(R.id.rec);
         rec.setAdapter(adapter);
         GridLayoutManager g = new GridLayoutManager(getContext() , 1);
         rec.setLayoutManager(g);
 
-        bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetTheme);
         view.findViewById(R.id.filterBtn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,6 +178,30 @@ public class fragment_home extends Fragment implements recycleViewInterface{
                 });
 
                 bottomSheetDialog.setContentView(view1);
+                bottomSheetDialog.show();
+            }
+
+        });
+
+        li1.add(new notifications("Notification 1", "2022-10-07", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 2", "2022-05-20", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 3", "2022-12-17", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 4", "2022-11-27", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 4", "2022-11-27", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 4", "2022-11-27", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 4", "2022-11-27", "we’ll notify you when something arrives..."));
+        li1.add(new notifications("Notification 4", "2022-11-27", "we’ll notify you when something arrives..."));
+
+        adapter1 = new noti_adapter(li1, this);
+        bottomSheetDialog.setContentView(R.layout.notification);
+
+        recNotifications = bottomSheetDialog.findViewById(R.id.recNotifications);
+        GridLayoutManager gg = new GridLayoutManager(getContext() ,1);
+        recNotifications.setLayoutManager(gg);
+        recNotifications.setAdapter(adapter1);
+        view.findViewById(R.id.notificationBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 bottomSheetDialog.show();
             }
 
