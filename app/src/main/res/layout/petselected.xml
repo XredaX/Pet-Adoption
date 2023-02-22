@@ -63,7 +63,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cat_pic"
                     app:riv_corner_radius="@dimen/_8sdp" />
 
                 <LinearLayout
