@@ -167,7 +167,7 @@ public class fragment_fav extends Fragment implements recycleViewInterface{
         view1.findViewById(R.id.adoptBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), Register.class));
+                startActivity(new Intent(getContext(), AdoptNow.class));
             }
         });
 
