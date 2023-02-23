@@ -9,19 +9,21 @@ import android.view.View;
 
 public class Profile_activity extends AppCompatActivity {
 
-    AppCompatButton EditProfile;
+    AppCompatButton AddAddress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        EditProfile = (AppCompatButton) findViewById(R.id.EditProfile);
-        EditProfile.setOnClickListener(new View.OnClickListener() {
+
+
+/*        AddAddress = (AppCompatButton) findViewById(R.id.AddAddress);
+        AddAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Profile_activity.this, Edit_Profile.class);
+                Intent intent = new Intent(Adresse_Activity.this, AddAddress.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 }

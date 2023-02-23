@@ -1,7 +1,9 @@
 package com.pet.adoption;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -63,15 +65,24 @@ public class fragment_profil extends Fragment {
             }
         });
 
-        /*
         TxtLogout = (TextView) context.findViewById(R.id.imgLogout);
         TxtLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,Login.class);
-                startActivity(intent);
+                startActivity(new Intent(context, Login.class));
+                context.finish();
+
+                SharedPreferences sp = getContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
+                SharedPreferences.Editor Ed = sp.edit();
+                Ed.putString("username", "");
+                Ed.putString("password", "");
+                Ed.commit();
+
+                SharedPreferences sp1=getContext().getSharedPreferences("CHECKLOGIN", Context.MODE_PRIVATE);
+                SharedPreferences.Editor Ed1 = sp1.edit();
+                Ed1.putString("checkL", "True");
+                Ed1.commit();
             }
         });
-         */
     }
 }
