@@ -142,6 +142,7 @@
             android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
+            android:id="@+id/TxtNoti"
             />
     </LinearLayout>
     <View
