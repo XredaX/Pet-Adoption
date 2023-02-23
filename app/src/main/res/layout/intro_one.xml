@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Online Shopping"
+            android:text="Adopt, don't shop"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:textSize="25sp"
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Women Fashion Shopping Online - Shop from a huge range of latest women clothing, shoes, makeup Kits, Watches, footwear and more for women at best price"
+            android:text="Adopting a pet from an animal shelter is an excellent way to bring a new companion into your life."
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25sp"
             android:layout_marginTop="15dp"

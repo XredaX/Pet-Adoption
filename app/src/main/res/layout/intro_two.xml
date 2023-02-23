@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add to cart"
+            android:text="Rescue is my favorite breed"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:textSize="25sp"
@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add to cart button works on product pages. The customizations in this section  compatible with dynamic checkout buttons"
+            android:text="Rescue dogs are truly special creatures, and they hold a special place in my heart. These dogs have often had a difficult start in life, whether it be due to neglect, abuse, or abandonment. But despite these challenges, rescue dogs have an incredible capacity for love and loyalty."
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25sp"
             android:layout_marginTop="15dp"
