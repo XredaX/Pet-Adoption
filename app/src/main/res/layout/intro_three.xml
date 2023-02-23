@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Payment Successful"
+            android:text="Save a life, adopt a pet"
             android:textColor="@android:color/black"
             android:gravity="center"
             android:textSize="25sp"
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your payment has been successfully completed. You will receive a confirmation email within a few minutes. "
+            android:text="Adopting a pet from a shelter is a wonderful way to bring joy, love, and companionship into your life, while also making a difference for an animal in need."
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25sp"
             android:layout_marginTop="15dp"
