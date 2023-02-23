@@ -59,10 +59,6 @@ public class fragment_home extends Fragment implements recycleViewInterface{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetTheme);
-
-
-
-
         databaseReference.child("pets").addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -107,7 +103,6 @@ public class fragment_home extends Fragment implements recycleViewInterface{
 
             }
         });
-
 
         adapter = new rec_adapter(li, this);
         rec = view.findViewById(R.id.rec);
@@ -183,6 +178,7 @@ public class fragment_home extends Fragment implements recycleViewInterface{
 
         });
 
+
         li1.add(new notifications("Notification 1", "2022-10-07", "we’ll notify you when something arrives..."));
         li1.add(new notifications("Notification 2", "2022-05-20", "we’ll notify you when something arrives..."));
         li1.add(new notifications("Notification 3", "2022-12-17", "we’ll notify you when something arrives..."));
@@ -193,15 +189,17 @@ public class fragment_home extends Fragment implements recycleViewInterface{
         li1.add(new notifications("Notification 4", "2022-11-27", "we’ll notify you when something arrives..."));
 
         adapter1 = new noti_adapter(li1, this);
-        bottomSheetDialog.setContentView(R.layout.notification);
-
-        recNotifications = bottomSheetDialog.findViewById(R.id.recNotifications);
-        GridLayoutManager gg = new GridLayoutManager(getContext() ,1);
-        recNotifications.setLayoutManager(gg);
-        recNotifications.setAdapter(adapter1);
         view.findViewById(R.id.notificationBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                View view1 = LayoutInflater.from(getContext()).inflate(R.layout.notification, null);
+
+                recNotifications = view1.findViewById(R.id.recNotifications);
+                GridLayoutManager gg = new GridLayoutManager(getContext() ,1);
+                recNotifications.setLayoutManager(gg);
+                recNotifications.setAdapter(adapter1);
+
+                bottomSheetDialog.setContentView(view1);
                 bottomSheetDialog.show();
             }
 
