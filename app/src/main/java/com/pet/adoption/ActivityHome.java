@@ -1,79 +1,65 @@
 package com.pet.adoption;
 
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class ActivityHome extends AppCompatActivity {
 
-    private MeowBottomNavigation BottomNavigation;
+    private BottomNavigationView bo;
+    private FloatingActionButton addpet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        BottomNavigation = findViewById(R.id.navigationBar);
+        bo = findViewById(R.id.bottomNavigationview);
 
-        BottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
-        BottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_pet));
-        BottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_add));
-        BottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_favo));
-        BottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_profil));
-
-        BottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
+        addpet = findViewById(R.id.addpet);
+        addpet.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onShowItem(MeowBottomNavigation.Model item) {
-                Fragment fragment = null;
-                if (item.getId() ==5) {
-                    fragment = new fragment_add();
-                }
-                else if (item.getId() ==4){
-                    fragment = new fragment_profil();
-                }else  if (item.getId() ==3){
-                    fragment = new fragment_fav();
-                }
-                else  if (item.getId() ==2){
-                    fragment = new fragment_pet();
-                }
-                else {
-                    fragment = new fragment_home();
-                }
-                loadFragment(fragment);
+            public void onClick(View view) {
+                replaceFragment(new fragment_add());
             }
         });
 
-        BottomNavigation.setCount(1, "10");
-        BottomNavigation.show(1, false);
-
-
-        BottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
-            @Override
-            public void onClickItem(MeowBottomNavigation.Model item) {
-                //display a toast
-//                Toast.makeText(getApplicationContext()," You clicked "+ item.getId(), Toast.LENGTH_SHORT).show();
+        bo.setBackground(null);
+        replaceFragment(new fragment_home());
+        bo.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.pet:
+                    replaceFragment(new fragment_pet());
+                    break;
+                case R.id.favor:
+                    replaceFragment(new fragment_fav());
+                    break;
+                case R.id.profil:
+                    replaceFragment(new fragment_profil());
+                    break;
+                case R.id.home:
+                    replaceFragment(new fragment_home());
+                    break;
             }
+            return true;
         });
 
-        BottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
-            @Override
-            public void onReselectItem(MeowBottomNavigation.Model item) {
-                //display a toast
-//                Toast.makeText(getApplicationContext()," You reselected "+ item.getId(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-//        loadFragment(new fragment_home());
     }
 
 
-    private void loadFragment(Fragment fragment) {
-        //replace the fragment
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.frame_layout,fragment, null)
-                .commit();
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
     }
 }
 
